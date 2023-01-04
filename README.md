@@ -34,7 +34,7 @@
 
 # 📖 School Library: Add classes <a name="about-project"></a>
 
-**School Library: Decorate a class** is a milestone of a Ruby project which is meant for exercising on creating decorators.
+**School Library: Setup Associations** is a milestone of a Ruby project which is meant for exercising on creating associations between classes.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -50,9 +50,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Create a component `nameable` which has correct_name method interface, not implemented yet**
-- **Create capitalize_decorator that capitalize the first character of a name**
-- **Create trimmer_decorator decorator that trimms a name if it has more than 10 characters**
+- **Create `Classroom` class and setup associations between Student and Classroom class**
+- **Create `Book` class and setup many to many associations between Person and Book class using intermediate class `Rental`**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -78,8 +77,6 @@ Clone this repository to your desired folder:
 ### Usage
 
 To run the project, execute the following command:
-
-`Create Person, CapitalizeDecorator, TrimmerDecorator object and call the correct_name method`
 
 To check linters for this project, execute the following command:
 `rubucco .`
@@ -107,6 +104,7 @@ To check linters for this project, execute the following command:
 - [ ] **Show the students and teachers created**
 - [ ] **Add other entities and show the entities created**
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -128,7 +126,7 @@ If you like this project...
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 
-I would like to thank microverse, our school which provides materials to do this project.
+I would like to thank Microverse, our school which provides materials to do this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
