@@ -1,5 +1,5 @@
 class Classroom
-  attr_accessor: label
+  attr_accessor :label
 
   def initialize(label)
     @label = label
@@ -7,8 +7,7 @@ class Classroom
   end
 
   def add_student(student)
-    @students << student unless @students.include?(student)
-
+    @students.push(student) unless @students.include?(student)
     student.classroom = self
   end
 end
