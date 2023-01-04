@@ -34,7 +34,7 @@
 
 # 📖 School Library: Add classes <a name="about-project"></a>
 
-**School Library: Add classes** is a Ruby project which is meant for exercising on creating classes, methods and using best practices of Ruby.
+**School Library: Decorate a class** is a milestone of a Ruby project which is meant for exercising on creating decorators.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -50,9 +50,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Create three classes with differerent file names**
-- **Two classes Student and Teacher inherits from the Person class**
-- **The public method `can_use_services?` uses the private method, `of_age?`**
+- **Create a component `nameable` which has correct_name method interface, not implemented yet**
+- **Create capitalize_decorator that capitalize the first character of a name**
+- **Create trimmer_decorator decorator that trimms a name if it has more than 10 characters**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,9 +79,7 @@ Clone this repository to your desired folder:
 
 To run the project, execute the following command:
 
-`ruby person.rb`
-`ruby student.rb`
-`ruby teacher.rb`
+`Create Person, CapitalizeDecorator, TrimmerDecorator object and call the correct_name method`
 
 To check linters for this project, execute the following command:
 `rubucco .`
