@@ -34,7 +34,7 @@
 
 # 📖 School Library: Add classes <a name="about-project"></a>
 
-**School Library: Setup Associations** is a milestone of a Ruby project which is meant for exercising on creating associations between classes.
+**School Library: Add basic UI** is a milestone of a Ruby project which is meant for exercising on creating console user interfaces.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -50,8 +50,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Create `Classroom` class and setup associations between Student and Classroom class**
-- **Create `Book` class and setup many to many associations between Person and Book class using intermediate class `Rental`**
+- **Create `App` class which is used as a console App entry point.**
+- **Create `main` method that initialize the `App` class and used as the entry point from which execution starts**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -78,8 +78,7 @@ Clone this repository to your desired folder:
 
 To run the project, execute the following command:
 
-To check linters for this project, execute the following command:
-`rubucco .`
+`ruby main.rb`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,9 +99,9 @@ To check linters for this project, execute the following command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **Create and store Student and Teacher data**
-- [ ] **Show the students and teachers created**
-- [ ] **Add other entities and show the entities created**
+- [ ] **Persistently store data**
+- [ ] **Create database for the data**
+- [ ] **Manipulate the database using the rupy program I wrote**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
