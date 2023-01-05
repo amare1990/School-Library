@@ -116,6 +116,17 @@ class App
   end
 
   def create_rental
+    puts 'Select a book from the following list by number'
+    @books.each_with_index {|book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}"}
+    book_index = gets.chomp.to_i
 
+    puts 'Select a person from the following list by number (not id)'
+    @people.each_with_index { |people, index| puts "#{index}) [people.class] Name: #{people.name}, ID: #{people.id}, Age: #{people.age}" }
+    people_index = gets.chomp.to_i
+    print 'Date: '
+    date = gets.chomp
+    rental = Rental.new(date, @books[book_index], @people[people_index])
+    @rentals << rental unless @rentals.include?(rental)
+    puts 'Rental created successfully'
   end
 end
