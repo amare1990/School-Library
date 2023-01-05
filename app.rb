@@ -42,6 +42,7 @@ class App
       when 6
         list_rentals
       when 7
+        puts 'Thank you for using this App!'
         break
       else
         puts 'Invalid menu option'
@@ -83,15 +84,15 @@ class App
     print 'Name: '
     name = gets.chomp.to_s
     print 'Has parent permission? [Y/N]: '
-    permission = gets.chomp.downcase
-    if permission == y
-      permission = true
-    elsif permission == n
-      permission = false
+    parent_permission = gets.chomp.downcase
+    if parent_permission == "y"
+      parent_permission = true
+    elsif parent_permission == "n"
+      parent_permission = false
     else
       puts 'Invalid permission input'
     end
-    student = Student.new(age, name, permission)
+    student = Student.new(age, name, parent_permission)
     @people.push(student)
     puts 'Person Created successfully'
   end
