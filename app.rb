@@ -129,4 +129,12 @@ class App
     @rentals << rental unless @rentals.include?(rental)
     puts 'Rental created successfully'
   end
+
+  def list_rentals
+    print 'ID of person: '
+    person_id = gets.chomp.to_i
+    puts 'Rentals: '
+
+    @rentals.select { |rental| puts "Date: #{rental.date}, Book #{rental.book.title} by #{rental.book.author}" if rental.person.id == person_id }
+  end
 end
