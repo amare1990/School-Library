@@ -77,6 +77,18 @@ class App
     end
   end
 
+  def save_people
+    File.open('person.json', 'w') do |file|
+      people = @people.each.map do |person|
+        {
+          subclass: person.class, Name: person.name, ID: person.id, Age: person.age
+        }
+      end
+      file.write(JSON.generate(people))
+    end
+
+  end
+
   def create_student
     print 'Age: '
     age = gets.chomp.to_i
@@ -95,6 +107,7 @@ class App
     student = Student.new(age, name, parent_permission)
     @people.push(student)
     puts 'Person Created successfully'
+
   end
 
   def create_teacher
