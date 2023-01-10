@@ -134,6 +134,17 @@ class App
     end
   end
 
+  def read_rentals
+    return [] unless File.exist?('rentals.json')
+
+    file_handle = File.read('rentals.json')
+    object_rentals = JSON.parse(file_handle)
+
+    object_rentals.map do |rental|
+      Rental.new(rental['date'], @books[rental['book_title']], @people[rental['person_name']])
+    end
+  end
+
   def create_student
     print 'Age: '
     age = gets.chomp.to_i

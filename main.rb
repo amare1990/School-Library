@@ -5,7 +5,7 @@ def main
   app.run
 
   at_exit do
-    app.save_people
+    app.save_rentals
   end
 end
 
