@@ -2,6 +2,7 @@ require './student'
 require './teacher'
 require './book'
 require './rental'
+require 'json'
 
 class App
   MENU = {
@@ -16,7 +17,7 @@ class App
 
   def initialize
     @books = []
-    @people = []
+    @people = read_people
     @rentals = []
   end
 
@@ -81,12 +82,31 @@ class App
     File.open('person.json', 'w') do |file|
       people = @people.each.map do |person|
         {
-          subclass: person.class, Name: person.name, ID: person.id, Age: person.age
+          subclass: person.class, Name: person.name, ID: person.id, Age: person.age,
+          specialization: (person.specialization if person.instance_of?(Teacher))
         }
       end
       file.write(JSON.generate(people))
     end
+  end
 
+  def read_people
+    return [] unless File.exist?('person.json')
+    file_handle = File.read('person.json')
+    json_people = JSON.parse(file_handle)
+    json_people.map do |person|
+      case person['subclass']
+      when 'Teacher'
+        age = person['Age']
+        name = person['Name']
+        specialization = person['specialization']
+        Teacher.new(specialization, age, name)
+      when 'Student'
+        age = person['Age']
+        name = person['Name']
+        Student.new(age, name)
+      end
+    end
   end
 
   def create_student
