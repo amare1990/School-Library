@@ -16,7 +16,7 @@ class App
   }.freeze
 
   def initialize
-    @books = []
+    @books = read_books
     @people = read_people
     @rentals = []
   end
@@ -82,11 +82,33 @@ class App
     File.open('person.json', 'w') do |file|
       people = @people.each.map do |person|
         {
-          subclass: person.class, Name: person.name, ID: person.id, Age: person.age,
+          class: person.class, Name: person.name, ID: person.id, Age: person.age,
           parent_permission: person.parent_permission,
-          specialization: (person.specialization if person.instance_of?(Teacher))}
+          specialization: (person.specialization if person.instance_of?(Teacher)) }
       end
       file.write(JSON.generate(people))
+    end
+  end
+
+  def save_books
+    File.open('books.json', 'w') do |file|
+      books = @books.each.map do |book|
+        {
+          title: book.title, author: book.author
+        }
+      end
+      file.write(JSON.generate(books))
+    end
+  end
+
+  def save_rentals
+    File.open('rentals.json', 'w') do |file|
+      rentals = @rentals.each.map do |rental|
+        {
+          date: rental.date, book_title: rental.book.title, person_name: rental.person.name
+        }
+      end
+      file.write(JSON.generate(rentals))
     end
   end
 
@@ -94,13 +116,21 @@ class App
     return [] unless File.exist?('person.json')
     file_handle = File.read('person.json')
     json_people = JSON.parse(file_handle)
-    json_people.each.map do |person|
-      case person['subclass']
+    json_people.map do |person|
+      case person['class']
       when 'Teacher'
         Teacher.new(person['specialization'], person['Age'], person['Name'])
       when 'Student'
         Student.new(person['Age'], person['Name'], parent_permission: person['parent_permission'])
       end
+    end
+  end
+
+  def read_books
+    return [] unless File.exist?('books.json')
+    json_books = JSON.parse(File.read('books.json'))
+    json_books.map do |book|
+      Book.new(book['title'], book['author'])
     end
   end
 
