@@ -83,8 +83,8 @@ class App
       people = @people.each.map do |person|
         {
           subclass: person.class, Name: person.name, ID: person.id, Age: person.age,
-          specialization: (person.specialization if person.instance_of?(Teacher))
-        }
+          parent_permission: person.parent_permission,
+          specialization: (person.specialization if person.instance_of?(Teacher))}
       end
       file.write(JSON.generate(people))
     end
@@ -94,17 +94,12 @@ class App
     return [] unless File.exist?('person.json')
     file_handle = File.read('person.json')
     json_people = JSON.parse(file_handle)
-    json_people.map do |person|
+    json_people.each.map do |person|
       case person['subclass']
       when 'Teacher'
-        age = person['Age']
-        name = person['Name']
-        specialization = person['specialization']
-        Teacher.new(specialization, age, name)
+        Teacher.new(person['specialization'], person['Age'], person['Name'])
       when 'Student'
-        age = person['Age']
-        name = person['Name']
-        Student.new(age, name)
+        Student.new(person['Age'], person['Name'], parent_permission: person['parent_permission'])
       end
     end
   end
@@ -124,7 +119,7 @@ class App
     else
       puts 'Invalid permission input'
     end
-    student = Student.new(age, name, parent_permission)
+    student = Student.new(age, name, parent_permission: parent_permission)
     @people.push(student)
     puts 'Person Created successfully'
 
