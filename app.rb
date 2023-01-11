@@ -2,8 +2,10 @@ require './student'
 require './teacher'
 require './book'
 require './rental'
-
+require 'json'
+require './data_stored'
 class App
+  include Data
   MENU = {
     1 => :list_books,
     2 => :list_people,
@@ -15,9 +17,9 @@ class App
   }.freeze
 
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
+    @books = read_books
+    @people = read_people
+    @rentals = read_rentals
   end
 
   def run
@@ -92,7 +94,7 @@ class App
     else
       puts 'Invalid permission input'
     end
-    student = Student.new(age, name, parent_permission)
+    student = Student.new(age, name, parent_permission: parent_permission)
     @people.push(student)
     puts 'Person Created successfully'
   end
@@ -144,7 +146,7 @@ class App
     puts 'Rentals: '
 
     @rentals.select do |rental|
-      puts "Date: #{rental.date}, Book #{rental.book.title} by #{rental.book.author}" if rental.person.id == person_id
+      puts "Date: #{rental.date}, Book #{rental.book.title} by #{rental.person.name}" if rental.person.id == person_id
     end
   end
 end
