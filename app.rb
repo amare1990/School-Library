@@ -5,7 +5,7 @@ require './rental'
 require 'json'
 require './data_stored'
 class App
-include Data
+  include Data
   MENU = {
     1 => :list_books,
     2 => :list_people,
@@ -20,7 +20,6 @@ include Data
     @books = read_books
     @people = read_people
     @rentals = read_rentals
-    
   end
 
   def run
@@ -79,8 +78,6 @@ include Data
       puts 'Invalid choice'
     end
   end
-
-  
 
   def create_student
     print 'Age: '
