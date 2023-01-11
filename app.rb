@@ -18,7 +18,7 @@ class App
   def initialize
     @books = read_books
     @people = read_people
-    @rentals = []
+    @rentals = read_rentals
   end
 
   def run
@@ -85,7 +85,7 @@ class App
           class: person.class, Name: person.name, ID: person.id, Age: person.age,
           parent_permission: person.parent_permission,
           specialization: (person.specialization if person.instance_of?(Teacher)),
-          index: index, id: person.id }
+          index: index}
       end
       file.write(JSON.generate(people))
     end
@@ -124,8 +124,8 @@ class App
   def read_people
     return [] unless File.exist?('person.json')
     file_handle = File.read('person.json')
-    json_people = JSON.parse(file_handle)
-    json_people.map do |person|
+    object_people = JSON.parse(file_handle)
+    object_people.map do |person|
       case person['class']
       when 'Teacher'
         Teacher.new(person['specialization'], person['Age'], person['Name'])
@@ -146,8 +146,9 @@ class App
   def read_rentals
     return [] unless File.exist?('rentals.json')
 
-    file_handle = File.read('rentals.json')
-    object_rentals = JSON.parse(file_handle)
+    # file_handle = File.read('rentals.json')
+    object_rentals = JSON.parse(File.read('rentals.json'))
+    puts object_rentals
 
     object_rentals.map do |rental|
       Rental.new(rental['date'], @books[rental['book_index']], @people[rental['person_index']])

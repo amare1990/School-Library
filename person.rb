@@ -1,5 +1,6 @@
 require './nameable'
 require './rental'
+require './book'
 
 class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
@@ -24,15 +25,6 @@ class Person < Nameable
 
   def add_rental(date, book)
     @rentals << Rental.new(date, self, book)
-  end
-
-  def to_json(*_args)
-    {
-      age: @age,
-      name: @name,
-      parent_permission: @parent_permission,
-      id: @id
-    }
   end
 
   private
