@@ -1,1 +1,1 @@
-[{"class":"Student","Name":"hamere","ID":573,"Age":19,"parent_permission":false,"specialization":null,"index":0},{"class":"Teacher","Name":"Amare","ID":494,"Age":37,"parent_permission":true,"specialization":"Comp eng","index":1}]
+[{"class":"Student","Name":"jose ","ID":456,"Age":25,"parent_permission":false,"specialization":null,"index":0},{"class":"Teacher","Name":"amare","ID":665,"Age":40,"parent_permission":true,"specialization":"math","index":1}]
