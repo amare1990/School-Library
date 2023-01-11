@@ -80,11 +80,12 @@ class App
 
   def save_people
     File.open('person.json', 'w') do |file|
-      people = @people.each.map do |person|
+      people = @people.each_with_index.map do |person, index|
         {
           class: person.class, Name: person.name, ID: person.id, Age: person.age,
           parent_permission: person.parent_permission,
-          specialization: (person.specialization if person.instance_of?(Teacher)) }
+          specialization: (person.specialization if person.instance_of?(Teacher)),
+          index: index, id: person.id }
       end
       file.write(JSON.generate(people))
     end
@@ -92,9 +93,9 @@ class App
 
   def save_books
     File.open('books.json', 'w') do |file|
-      books = @books.each.map do |book|
+      books = @books.each_with_index.map do |book, index|
         {
-          title: book.title, author: book.author
+          title: book.title, author: book.author, index: index
         }
       end
       file.write(JSON.generate(books))
@@ -103,13 +104,21 @@ class App
 
   def save_rentals
     File.open('rentals.json', 'w') do |file|
-      rentals = @rentals.each.map do |rental|
+      rentals = @rentals.each_with_index.map do |rental, _index|
         {
-          date: rental.date, book_title: rental.book.title, person_name: rental.person.name
+          date: rental.date, book_index: @books.index(rental.book),
+          person_index: @people.index(rental.person)
         }
       end
+
       file.write(JSON.generate(rentals))
     end
+  end
+
+  def preserve_all
+    save_people
+    save_books
+    save_rentals
   end
 
   def read_people
@@ -141,7 +150,7 @@ class App
     object_rentals = JSON.parse(file_handle)
 
     object_rentals.map do |rental|
-      Rental.new(rental['date'], @books[rental['book_title']], @people[rental['person_name']])
+      Rental.new(rental['date'], @books[rental['book_index']], @people[rental['person_index']])
     end
   end
 
@@ -213,7 +222,7 @@ class App
     puts 'Rentals: '
 
     @rentals.select do |rental|
-      puts "Date: #{rental.date}, Book #{rental.book.title} by #{rental.book.author}" if rental.person.id == person_id
+      puts "Date: #{rental.date}, Book #{rental.book.title} by #{rental.person.name}" if rental.person.id == person_id
     end
   end
 end

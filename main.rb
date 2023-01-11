@@ -5,7 +5,7 @@ def main
   app.run
 
   at_exit do
-    app.save_rentals
+    app.preserve_all
   end
 end
 
