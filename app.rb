@@ -85,7 +85,8 @@ class App
           class: person.class, Name: person.name, ID: person.id, Age: person.age,
           parent_permission: person.parent_permission,
           specialization: (person.specialization if person.instance_of?(Teacher)),
-          index: index}
+          index: index
+        }
       end
       file.write(JSON.generate(people))
     end
@@ -123,6 +124,7 @@ class App
 
   def read_people
     return [] unless File.exist?('person.json')
+
     file_handle = File.read('person.json')
     object_people = JSON.parse(file_handle)
     object_people.map do |person|
@@ -137,6 +139,7 @@ class App
 
   def read_books
     return [] unless File.exist?('books.json')
+
     json_books = JSON.parse(File.read('books.json'))
     json_books.map do |book|
       Book.new(book['title'], book['author'])
@@ -173,7 +176,6 @@ class App
     student = Student.new(age, name, parent_permission: parent_permission)
     @people.push(student)
     puts 'Person Created successfully'
-
   end
 
   def create_teacher
