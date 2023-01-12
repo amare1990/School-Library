@@ -47,8 +47,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Create `data_stored` module.**
-- **Create `Stored methods` that stores and retrieves data.**
+- **Create `Solver` class.**
+- **Create `Fizzbuzz - Factorial - Reverse methods` with their specific tasks.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
