@@ -12,4 +12,8 @@ class Solver
     return num * factorial(num - 1)
 
   end
+
+  def reverse(word)
+    word = word.reverse
+  end
 end
