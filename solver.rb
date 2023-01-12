@@ -1,37 +1,25 @@
 class Solver
-
   def factorial(num)
-    if num < 0
-      raise "Factorial of a negative number is not applicable"
-    end
+    raise 'Factorial of a negative number is not applicable' if num.negative?
 
-    if num == 0
-      return 1
-    end
+    return 1 if num.zero?
 
-    return num * factorial(num - 1)
-
+    num * factorial(num - 1)
   end
 
   def reverse(word)
-    word = word.reverse
+    word.reverse
   end
 
-  def fizzbuzz(n)
-    if n % 3 == 0 && n % 5 == 0
-      return "fizzbuzz"
-    elsif n % 3 == 0
-      return "fizz"
-    elsif n % 5 == 0
-      return "buzz"
+  def fizzbuzz(num)
+    if (num % 3).zero? && (num % 5).zero?
+      'fizzbuzz'
+    elsif (num % 3).zero?
+      'fizz'
+    elsif (num % 5).zero?
+      'buzz'
     else
-      return n.to_s
+      num.to_s
     end
   end
-
-
-
 end
-
-
-
