@@ -29,7 +29,7 @@
 
 # 📖 School Library: TDD approach  <a name="about-project"></a>
 
-**School Library: Used TDD approach ** class created using TDD methodology.
+**School Library: Used TDD approach ** is the fourth milestone of the project meant to implement test units for the code units from the project requirement using TDD approach.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -45,8 +45,10 @@
 
 ### Key Features <a name="key-features"></a>
 
+- **Create test units for each methos in tthe Solver class first**
 - **Create `Solver` class.**
-- **Create `Fizzbuzz - Factorial - Reverse methods` with their specific tasks.**
+- **Create `Fizzbuzz - Factorial - Reverse methods` with their specific tasks. after we created unit tests**
+- **Test the unit codes using the unit tests we wrote**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -73,7 +75,7 @@ Clone this repository to your desired folder:
 
 To run the project, execute the following command:
 
-`ruby main.rb`
+`rspec spec spec/test_file_rspec.rb`, where  `test_file_rspec.rb` is the name of each unit test files.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
