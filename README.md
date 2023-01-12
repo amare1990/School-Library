@@ -29,9 +29,9 @@
   - [📝 License ](#-license-)
 
 
-# 📖 School Library: Preserve data <a name="about-project"></a>
+# 📖 School Library: TDD approach  <a name="about-project"></a>
 
-**School Library: Preserve data** is a project milestone wich stores books,people and rentals in files using  JSON  format.
+**School Library: Used TDD approach ** class created using TDD methodology.
 
 ## 🛠 Built With <a name="built-with"></a>
 
