@@ -3,8 +3,9 @@ require './teacher'
 require './book'
 require './rental'
 require 'json'
-
+require './data_stored'
 class App
+  include Data
   MENU = {
     1 => :list_books,
     2 => :list_people,
@@ -78,6 +79,7 @@ class App
     end
   end
 
+<<<<<<< HEAD
   def save_people
     File.open('person.json', 'w') do |file|
       people = @people.each_with_index.map do |person, index|
@@ -158,6 +160,8 @@ class App
     end
   end
 
+=======
+>>>>>>> 56bb87e841c8f7577fe89567a25148a00fd1e743
   def create_student
     print 'Age: '
     age = gets.chomp.to_i

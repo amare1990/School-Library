@@ -11,30 +11,27 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 School Library: Preserve data ](#-school-library-preserve-data-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Usage](#usage)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
+  - [📝 License ](#-license-)
 
 
-# 📖 School Library: Add classes <a name="about-project"></a>
+# 📖 School Library: Preserve data <a name="about-project"></a>
 
-**School Library: Add basic UI** is a milestone of a Ruby project which is meant for exercising on creating console user interfaces.
+**School Library: Preserve data** is a project milestone wich stores books,people and rentals in files using  JSON  format.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -50,8 +47,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Create `App` class which is used as a console App entry point.**
-- **Create `main` method that initialize the `App` class and used as the entry point from which execution starts**
+- **Create `data_stored` module.**
+- **Create `Stored methods` that stores and retrieves data.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,6 +89,11 @@ To run the project, execute the following command:
 - Twitter: [@twitterhandle](https://twitter.com/@amaremek)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/amaremek)
 
+👤 **JOSE ZEPEDA**
+
+- GitHub: [J2ZROMERO](https://github.com/J2ZROMERO)
+- Twitter: [@JOSEZEPED4](https://twitter.com/JOSEZEPED4)
+- LinkedIn: [JOSE ZEPEDA](https://www.linkedin.com/in/jose-zepeda-733ab91ab/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -99,7 +101,6 @@ To run the project, execute the following command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **Persistently store data**
 - [ ] **Create database for the data**
 - [ ] **Manipulate the database using the rupy program I wrote**
 
