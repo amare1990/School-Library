@@ -1,7 +1,7 @@
 require './book'
 require './person'
 require './rental'
-module Data
+module DataApp
   def save_people
     File.open('person.json', 'w') do |file|
       people = @people.each_with_index.map do |person, index|

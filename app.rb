@@ -4,8 +4,9 @@ require './book'
 require './rental'
 require 'json'
 require './data_stored'
+
 class App
-  include Data
+  include DataApp
   MENU = {
     1 => :list_books,
     2 => :list_people,
