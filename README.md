@@ -2,8 +2,6 @@
 
 
 <div align="center">
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
 
   <h3><b>Microverse README Template</b></h3>
 
@@ -12,7 +10,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 School Library: Preserve data ](#-school-library-preserve-data-)
+- [📖 School Library: TDD ](#-school-library-preserve-data-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -29,9 +27,9 @@
   - [📝 License ](#-license-)
 
 
-# 📖 School Library: Preserve data <a name="about-project"></a>
+# 📖 School Library: TDD approach  <a name="about-project"></a>
 
-**School Library: Preserve data** is a project milestone wich stores books,people and rentals in files using  JSON  format.
+**School Library: Used TDD approach ** is the fourth milestone of the project meant to implement test units for the code units from the project requirement using TDD approach.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -47,8 +45,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Create `data_stored` module.**
-- **Create `Stored methods` that stores and retrieves data.**
+- **Create test units for each methos in tthe Solver class first**
+- **Create `Solver` class.**
+- **Create `Fizzbuzz - Factorial - Reverse methods` with their specific tasks. after we created unit tests**
+- **Test the unit codes using the unit tests we wrote**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -75,7 +75,7 @@ Clone this repository to your desired folder:
 
 To run the project, execute the following command:
 
-`ruby main.rb`
+`rspec spec spec/test_file_rspec.rb`, where  `test_file_rspec.rb` is the name of each unit test files.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
